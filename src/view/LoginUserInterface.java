@@ -12,11 +12,42 @@ import javafx.scene.text.Font;
 
 public class LoginUserInterface {
     public Pane constructLoginUI(Pane p) {
-        Label lbl = new Label("Hi There");
-        setupLabelUI(lbl, "Calibri", 18, 50, Pos.BASELINE_CENTER, 50, 50, "BLUE");
-        p.getChildren().addAll(lbl);
+		Label lbl = new Label("Welcom To JU Page");
+		TextField text1=new TextField();
+		TextField text2=new TextField();
+		Button but1=new Button("Login");
+		Button but2=new Button("Register");
+		text1.setPromptText("User_id");
+		setupTextUI(text1, "Calibri",20 , 400,Pos.BASELINE_LEFT , 100, 100);
+		setupTextUI(text2, "Calibri",20 , 400,Pos.BASELINE_LEFT , 100, 150);
+		setupLabelUI(lbl, "Calibri", 20, 50, Pos.BASELINE_CENTER, 50, 50, "BLUE");
+		setupButtonUI(but1, "Calibri", 20, 50, Pos.BASELINE_CENTER, 150, 200);
+		setupButtonUI(but2, "Calibri", 20, 50, Pos.BASELINE_CENTER, 150, 250);
+		p.getChildren().addAll(lbl);
+		p.getChildren().addAll(text1);
+		p.getChildren().addAll(text2);
+		p.getChildren().addAll(but1);
+		p.getChildren().addAll(but2);
         return p;
-    } 
+	} 
+	// public Pane constructRrgisterUI(Pane p1) {
+	// 	Label lbl = new Label("Welcom To JU Page");
+	// 	TextField text1=new TextField("Text_1");
+	// 	TextField text2=new TextField("Text_2");
+	// 	Button but1=new Button("Login");
+	// 	Button but2=new Button("Register");
+	// 	setupTextUI(text1, "Calibri",20 , 30,Pos.BASELINE_LEFT , 100, 100);
+	// 	setupTextUI(text2, "Calibri",20 , 30,Pos.BASELINE_LEFT , 100, 150);
+	// 	setupLabelUI(lbl, "Calibri", 20, 50, Pos.BASELINE_CENTER, 50, 50, "BLUE");
+	// 	setupButtonUI(but1, "Calibri", 20, 50, Pos.BASELINE_CENTER, 150, 200);
+	// 	setupButtonUI(but2, "Calibri", 20, 50, Pos.BASELINE_CENTER, 150, 250);
+	// 	p1.getChildren().addAll(lbl);
+	// 	p1.getChildren().addAll(text1);
+	// 	p1.getChildren().addAll(text2);
+	// 	p1.getChildren().addAll(but1);
+	// 	p1.getChildren().addAll(but2);
+    //     return p1;
+	// } 
 
     public void setupButtonUI(Button b, String ff, double f, double w, Pos p, double x, double y){
 		b.setFont(Font.font(ff, f));
@@ -25,7 +56,7 @@ public class LoginUserInterface {
 		b.setLayoutX(x);
 		b.setLayoutY(y);		
 	}
-    private void setupLabelUI(Label l, String ff, double f, double w, Pos p, double x, double y, String c){
+    public void setupLabelUI(Label l, String ff, double f, double w, Pos p, double x, double y, String c){
 		l.setFont(Font.font(ff, f));
 		l.setMinWidth(w);
 		l.setAlignment(p);
@@ -33,7 +64,7 @@ public class LoginUserInterface {
 		l.setLayoutY(y);
 		l.setTextFill(Color.web(c));
     }
-    private void setupTextUI(TextField t, String ff, double f, double w, Pos p, double x, double y){
+    public void setupTextUI(TextField t, String ff, double f, double w, Pos p, double x, double y){
 		t.setFont(Font.font(ff, f));
 		t.setMinWidth(w);
 		t.setMaxWidth(w);
@@ -41,7 +72,7 @@ public class LoginUserInterface {
 		t.setLayoutX(x);
 		t.setLayoutY(y);		
 	}
-	private void setupTextAreaUI(TextArea t, String ff,double f, int s, double w, Pos p, double x, double y){
+	public void setupTextAreaUI(TextArea t, String ff,double f, int s, double w, Pos p, double x, double y){
 		t.setFont(Font.font(ff, f));
 		t.setMinWidth(w);
 		t.setMaxWidth(w);
@@ -49,7 +80,7 @@ public class LoginUserInterface {
 		t.setLayoutX(x);
 		t.setLayoutY(y);		
 	}
-	private static void setupComboBoxUI(ComboBox<String> cb,double w, double x, double y) {
+	public static void setupComboBoxUI(ComboBox<String> cb,double w, double x, double y) {
 
 		cb.setMinWidth(w);
 		cb.setLayoutX(x);
