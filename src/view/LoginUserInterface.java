@@ -12,7 +12,7 @@ import javafx.scene.text.Font;
 
 public class LoginUserInterface {
     public Pane constructLoginUI(Pane p) {
-        var lbl = new Label("Hi There");
+        Label lbl = new Label("Hi There");
         setupLabelUI(lbl, "Calibri", 18, 50, Pos.BASELINE_CENTER, 50, 50, "BLUE");
         p.getChildren().addAll(lbl);
         return p;
