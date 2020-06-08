@@ -1,6 +1,7 @@
 package view;
 
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -9,9 +10,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 
 public class LoginUserInterface {
-    public Pane constructLoginUI(Pane p) {
+    public void constructLoginUI(Stage theStage) {
+	
+		Pane p = new Pane();
 		Label lbl = new Label("Welcom To JU Page");
 		TextField text1=new TextField();
 		TextField text2=new TextField();
@@ -28,8 +32,23 @@ public class LoginUserInterface {
 		p.getChildren().addAll(text2);
 		p.getChildren().addAll(but1);
 		p.getChildren().addAll(but2);
-        return p;
+		but2.setOnAction(e->{
+			constructRegisterUI(theStage);
+		});
+		Scene scn = new Scene(p, 1200, 720);
+		theStage.setScene(scn);
+		theStage.setTitle("Login Page");
+		theStage.show();
 	} 
+	public void constructRegisterUI(Stage theStage) {
+		Pane p = new Pane();
+		Label lbl = new Label("This is the register page");
+		setupLabelUI(lbl, "Algerian", 72, 100, Pos.BASELINE_CENTER, 200, 250, "RED");
+		p.getChildren().add(lbl);
+		Scene scn = new Scene(p,1200,1200);
+		theStage.setTitle("Register Page");
+		theStage.setScene(scn);
+	}
 	// public Pane constructRrgisterUI(Pane p1) {
 	// 	Label lbl = new Label("Welcom To JU Page");
 	// 	TextField text1=new TextField("Text_1");
