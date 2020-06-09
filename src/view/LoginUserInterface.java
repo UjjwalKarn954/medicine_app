@@ -1,5 +1,12 @@
 package view;
 
+
+
+import javafx.animation.Animation;
+import javafx.animation.FadeTransition;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -11,6 +18,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class LoginUserInterface {
     public void constructLoginUI(Stage theStage) {
@@ -59,7 +67,7 @@ public class LoginUserInterface {
 		TextField text2=new TextField();
 		TextField text3=new TextField();
 		TextField text4=new TextField();
-		TextField text5=new TextField()
+		TextField text5=new TextField();
 		Button but1=new Button("Register");
 		text1.setPromptText("Name");
 		text2.setPromptText("Company-name");
@@ -90,7 +98,18 @@ public class LoginUserInterface {
 		p.getChildren().addAll(text4);
 		p.getChildren().addAll(text5);
 		p.getChildren().addAll(but1);
-		Scene scn = new Scene(p,1200,1200);
+		but1.setOnAction(e->{
+			// Register Button Action
+			p.getChildren().clear();
+			Label lblRegSuccessfullLabel = new Label("Registered Successfully");
+			Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), evt->{lblRegSuccessfullLabel.setVisible(false);}),
+								new KeyFrame(Duration.seconds(0.5), evt->{lblRegSuccessfullLabel.setVisible(true);}));
+			timeline.setCycleCount(Animation.INDEFINITE);
+			timeline.play();
+			setupLabelUI(lblRegSuccessfullLabel, "Algerian", 48, 400.0, Pos.BASELINE_CENTER, 450.0, 360.0, "GREEN");
+			p.getChildren().add(lblRegSuccessfullLabel);
+		});	
+		Scene scn = new Scene(p,1200,720);
 		theStage.setTitle("Register Page");
 		theStage.setScene(scn);
 	
