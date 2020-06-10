@@ -74,11 +74,11 @@ public class LoginUserInterface {
 		text3.setPromptText("Email_id");
 		text4.setPromptText("password");
 		text5.setPromptText("Con_password");
-		setupTextUI(text1, "Calibri",20 , 400,Pos.BASELINE_LEFT , 140, 100);
-		setupTextUI(text2, "Calibri",20 , 400,Pos.BASELINE_LEFT , 140, 150);
-		setupTextUI(text3, "Calibri",20 , 400,Pos.BASELINE_LEFT , 140, 200);
-		setupTextUI(text4, "Calibri",20 , 400,Pos.BASELINE_LEFT , 140, 250);
-		setupTextUI(text5, "Calibri",20 , 400,Pos.BASELINE_LEFT , 140, 300);
+		setupTextUI(text1, "Calibri",20 , 400,Pos.BASELINE_LEFT , 200, 100);
+		setupTextUI(text2, "Calibri",20 , 400,Pos.BASELINE_LEFT , 200, 150);
+		setupTextUI(text3, "Calibri",20 , 400,Pos.BASELINE_LEFT , 200, 200);
+		setupTextUI(text4, "Calibri",20 , 400,Pos.BASELINE_LEFT , 200, 250);
+		setupTextUI(text5, "Calibri",20 , 400,Pos.BASELINE_LEFT , 200, 300);
 		setupLabelUI(lbl, "Calibri", 20, 50, Pos.BASELINE_CENTER, 50, 50, "BLUE");
 		setupLabelUI(lb2, "Calibri", 20, 50, Pos.BASELINE_CENTER, 50, 100, "BLUE");
 		setupLabelUI(lb3, "Calibri", 20, 50, Pos.BASELINE_CENTER, 50, 150, "BLUE");
