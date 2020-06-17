@@ -151,7 +151,7 @@ public class LoginUserInterface {
 
 	public void constructMedicineDbUI(Stage theStage){
 		Pane p=new Pane();
-		Label lb1=new Label("MEdicine Database");
+		Label lb1=new Label("Medicine Database");
 		TextField txt1=new TextField();
 		setupTextUI(txt1, "calibri", 20, 50, Pos.BASELINE_CENTER, 50, 100);
 		p.getChildren().addAll(txt1);
@@ -167,14 +167,14 @@ public class LoginUserInterface {
 		TableColumn col7=new TableColumn("InStock");
 		TableColumn col8=new TableColumn("Placeorder");
 
-		table.getColumns.addAll(col1,col2,col4,col5,col6,col7,col8);
+		table.getColumns().addAll(col1,col2,col4,col5,col6,col7,col8);
 
 		final VBox vbox=new VBox();
 		vbox.setSpacing(5);
 		vbox.setPadding(new Insets(10, 0, 0, 10));
 		vbox.getChildren().addAll(table);
 
-		((Group) p.getRoot()).getChildren().addAll(vbox);
+		p.getChildren().addAll(vbox);
 
 		Scene scn = new Scene(p,1200,720);
 		theStage.setTitle("Medical Database");
