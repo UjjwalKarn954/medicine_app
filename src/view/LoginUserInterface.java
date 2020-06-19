@@ -167,9 +167,11 @@ public class LoginUserInterface {
 		TableColumn<Track,String> col5=new TableColumn<Track,String>("C Address");
 		TableColumn<Track,String> col6=new TableColumn<Track,String>("C Contact");
 		TableColumn<Track,String> col7=new TableColumn<Track,String>("InStock");
-		TableColumn<Track,String> col8=new TableColumn<Track,String>("Placeorder");
+		TableColumn<Track,String> col8=new TableColumn<Track,String>("CostPrice");
+		TableColumn<Track,String> col9=new TableColumn<Track,String>("SellPrice");
+		TableColumn<Track,String> col10=new TableColumn<Track,String>("Placeorder");
 
-		table.getColumns().addAll(Arrays.asList(col1,col2,col4,col5,col6,col7,col8));
+		table.getColumns().addAll(Arrays.asList(col1,col2,col4,col5,col6,col7,col8,col9,col10));
 
 		final VBox vbox=new VBox();
 		vbox.setSpacing(5);
@@ -178,7 +180,7 @@ public class LoginUserInterface {
 
 		p.getChildren().addAll(vbox);
 
-		Scene scn = new Scene(p,1200,720);
+		Scene scn = new Scene(p,1200,1200);
 		theStage.setTitle("Medical Database");
 		theStage.setScene(scn);
         theStage.show();
@@ -187,10 +189,75 @@ public class LoginUserInterface {
    
 	}
 	public void constructOrderUI(Stage theStage){
+		Pane p=new Pane();
+		Label lb1=new Label("PlaceOrder");
+		setupLabelUI(lb1, "Calibri", 20, 50, Pos.BASELINE_CENTER, 50, 50, "BLUE");
+		p.getChildren().addAll(lb1);
+
+		TableView<Track> table =new TableView<Track>();
+		table.setEditable(true);
+
+		TableColumn<Track,String> col1=new TableColumn<Track,String>("S.N");
+		TableColumn<Track,String> col2=new TableColumn<Track,String>("Name");
+		TableColumn<Track,String> col3=new TableColumn<Track,String>("CAddress");
+		TableColumn<Track,String> col4=new TableColumn<Track,String>("CContact");
+		TableColumn<Track,String> col5=new TableColumn<Track,String>("Quantity");
+
+		table.getColumns().addAll(Arrays.asList(col1,col2,col3,col4,col5));
+
+		final VBox vbox=new VBox();
+		vbox.setSpacing(5);
+		vbox.setPadding(new Insets(10,0,0,10));
+		vbox.getChildren().addAll(table);
+
+		p.getChildren().addAll(vbox);
+
+		Scene scn=new Scene(p,1200,1200);
+		theStage.setTitle("PlaceOrder");
+		theStage.setScene(scn);
+		theStage.show();
+
+
+
+
+
+
 
 	}
 
 	public void constructSellingUI(Stage theStage){
+
+		Pane p=new Pane();
+		Label lb1=new Label("Selling");
+		setupLabelUI(lb1, "Calibri", 20, 50, Pos.BASELINE_CENTER, 50, 50, "BLUE");
+		p.getChildren().addAll(lb1);
+
+		TableView<Track> table =new TableView<Track>();
+		table.setEditable(true);
+
+		TableColumn<Track,String> col1=new TableColumn<Track,String>("S.N");
+		TableColumn<Track,String> col2=new TableColumn<Track,String>("Name");
+		TableColumn<Track,String> col3=new TableColumn<Track,String>("Quantity");
+		TableColumn<Track,String> col4=new TableColumn<Track,String>("Selling price");
+		TableColumn<Track,String> col5=new TableColumn<Track,String>("TotalCost");
+
+		table.getColumns().addAll(Arrays.asList(col1,col2,col3,col4,col5));
+
+		final VBox vbox=new VBox();
+		vbox.setSpacing(5);
+		vbox.setPadding(new Insets(10,0,0,10));
+		vbox.getChildren().addAll(table);
+
+		p.getChildren().addAll(vbox);
+
+		Scene scn=new Scene(p,1200,1200);
+		theStage.setTitle("Selling");
+		theStage.setScene(scn);
+		theStage.show();
+
+
+
+
 
 	}
 
