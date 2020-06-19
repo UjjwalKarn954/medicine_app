@@ -1,7 +1,6 @@
 package view;
 
 
-
 import javafx.animation.Animation;
 //import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
@@ -19,10 +18,12 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Track;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import java.util.Arrays;
 
 public class LoginUserInterface {
     public void constructLoginUI(Stage theStage) {
@@ -154,20 +155,21 @@ public class LoginUserInterface {
 		Label lb1=new Label("Medicine Database");
 		TextField txt1=new TextField();
 		setupTextUI(txt1, "calibri", 20, 50, Pos.BASELINE_CENTER, 50, 100);
-		p.getChildren().addAll(txt1);
+		setupLabelUI(lb1, "calibri", 20, 50, Pos.BASELINE_CENTER, 50, 100,"BLUE");
+		p.getChildren().addAll(txt1,lb1);
 		
-		TableView table=new TableView();
+		TableView<Track> table=new TableView<Track>();
 		table.setEditable(true);
 
-		TableColumn col1=new TableColumn("S.N");
-		TableColumn col2=new TableColumn("Name");
-		TableColumn col4=new TableColumn("Company");
-		TableColumn col5=new TableColumn("C Address");
-		TableColumn col6=new TableColumn("C Contact");
-		TableColumn col7=new TableColumn("InStock");
-		TableColumn col8=new TableColumn("Placeorder");
+		TableColumn<Track,String> col1=new TableColumn<Track,String>("S.N");
+		TableColumn<Track,String> col2=new TableColumn<Track,String>("Name");
+		TableColumn<Track,String> col4=new TableColumn<Track,String>("Company");
+		TableColumn<Track,String> col5=new TableColumn<Track,String>("C Address");
+		TableColumn<Track,String> col6=new TableColumn<Track,String>("C Contact");
+		TableColumn<Track,String> col7=new TableColumn<Track,String>("InStock");
+		TableColumn<Track,String> col8=new TableColumn<Track,String>("Placeorder");
 
-		table.getColumns().addAll(col1,col2,col4,col5,col6,col7,col8);
+		table.getColumns().addAll(Arrays.asList(col1,col2,col4,col5,col6,col7,col8));
 
 		final VBox vbox=new VBox();
 		vbox.setSpacing(5);
